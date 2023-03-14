@@ -1,0 +1,32 @@
+Создание сайта:
+python3 -m venv venv (создания виртуального окружения)
+source venv/bin/activate (активация виртуального окружения)
+deactivate (отключение виртуального окружения)
+django-admin startproject collsite_test (создание ядра сайта)
+python manage startapp men (создание приложения в сайте)
+Для создания приложения нужно:
+    В settings.py зайти в массив INSTALLED_APPS и добавить men.apps.MenConfig
+
+Для создания функций в файле views нужно:
+    from django.http import HttpResponse
+    def home(request):
+        return HttpResponse(f'<h1>Главная страница</h1>')
+
+Для файла urls нужно:
+    from men.views import home
+    path('men/', home),
+
+База данных:
+
+createdb website (Создание базы данных)
+psql (Вход в интерфес БД)
+\l (Выводит список всех БД)
+\q (Выход)
+dropdb website (Удаление базы данных)
+\du (Список пользователей)
+ALTER USER postgres WITH PASSWORD '4002'; (Поменять пароль у пользователя)
+CREATE USER username WITH PASSWORD 'password'; (Создание пользователя)
+ALTER USER username WITH SUPERUSER; (Выдать права пользователю)
+DROP USER username; (Удалить пользователя из БД)
+
+
