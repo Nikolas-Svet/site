@@ -17,10 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from men.views import *
 from django.urls import include, path
+from django.conf.urls.static import static
+from coolsite import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name = 'home'), #name можно использовать при указывании этой страницы, тк url может меняться
     path('men/', include('men.urls')), #Чтобы перенсти url приложения в свой файл папке
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 handler404 = pageNotFound #Переменная для генерации ошибки
