@@ -21,9 +21,9 @@ from django.conf.urls.static import static
 from coolsite import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name = 'home'), #name можно использовать при указывании этой страницы, тк url может меняться
-    path('about/', about),
-    path('men/', include('men.urls')), #Чтобы перенсти url приложения в свой файл папке
+
+    # path('', home, name = 'home'), #name можно использовать при указывании этой страницы, тк url может меняться
+    path('', include('men.urls')), #Чтобы перенсти url приложения в свой файл папке
 ]
 
 if settings.DEBUG:

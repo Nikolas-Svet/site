@@ -14,10 +14,12 @@
 {% block mainmenu %}
 		<div class="header">
 			<ul id="mainmenu" class="mainmenu">
-			<li class="logo"><a href="#"><div class="logo"></div></a></li>
+			<li class="logo"><a href="{% url 'about' %}"><div class="logo"></div></a></li>
+<!--				{% url 'about' %} при нажатии на сайт logo мы автоматически переходим на вкладку about (вкладки с названиями
+					находятся в coolsite/urls.py-->
 {% for m in menu %}
 	{% if not forloop.last %}
-			<li><a href="#">{{m.title}}</a></li>
+			<li><a href="{% url 'about' %}">{{m.title}}</a></li>
 	{% else %}
 			<li class="last"><a href="#">{{m.title}}</a></li>
 	{% endif %}
