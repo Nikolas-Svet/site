@@ -11,6 +11,18 @@ menu = [
     {'title': "Войти", 'url_name': 'login'}
 ]
 
+def add_page(request):
+    return HttpResponse(f'<p>Добавить статью</p>')
+
+def contact(request):
+    return HttpResponse(f'<p>Обратная связь</p>')
+
+def login(request):
+    return HttpResponse(f'<p>Войти</p>')
+
+def show_post(request, post_id):
+    return HttpResponse(f'Контент о пользователе: {post_id}')
+
 def home(request):
     posts = Men.objects.all()
     context = {
@@ -23,6 +35,8 @@ def home(request):
 
 def about(request):
     return render(request, 'men/about.html', {'menu':menu, 'title': 'О сайте'})
+
+
 
 
 
