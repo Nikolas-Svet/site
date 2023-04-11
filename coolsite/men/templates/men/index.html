@@ -3,7 +3,12 @@
 {% block content %}
 <ul class="list-articles">
 	{% for p in posts %}
-			<li><h2>{{p.title}}</h2>
+		<li>
+			<div class="article-panel">
+	<p class="first">Категории: {{p.cat}}</p>
+		</div>
+
+			<h2>{{p.title}}</h2>
 	{% autoescape on %}
 <!--		autoescape нужно для экранирования тегов, то есть, если в базе данных мы добавим теги,
 		то они будут выводится как текст. Эта функция позволяет читать теги, записанные в БД-->

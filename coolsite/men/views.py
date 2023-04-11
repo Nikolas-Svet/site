@@ -23,12 +23,31 @@ def login(request):
 def show_post(request, post_id):
     return HttpResponse(f'Контент о пользователе: {post_id}')
 
-def home(request):
-    posts = Men.objects.all()
+def show_category(request, cat_id):
+    posts = Men.objects.filter(cat_id = cat_id)
+    cats = Category.objects.all()
+
+    if len(posts) == 0:
+        raise Http404
+
     context = {
         'posts': posts,
+        'cats': cats,
+        'menu': menu,
+        'title': 'Отображение по рубрикам',
+        'cat_selected': cat_id,
+    }
+    return render(request, 'men/index.html', context=context)
+
+def home(request):
+    posts = Men.objects.all()
+    cats = Category.objects.all()
+    context = {
+        'posts': posts,
+        'cats': cats,
         'menu': menu,
         'title': 'Главная страница',
+        'cat_selected': 0,
     }
     return render(request, 'men/index.html', context = context)
 # ******************************************************************
