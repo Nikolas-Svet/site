@@ -4,5 +4,8 @@
     <mapping uuid="edb5fbb3-df3a-4ccc-9e1f-7c6d0724933a" name="postgres Mapping">
       <data-sources db="ce166701-6837-4927-b74c-34405efa555d" />
     </mapping>
+    <mapping uuid="2a5b2e55-0f61-491f-80b6-841454299268" name="NN Mapping">
+      <data-sources db="a824cf48-9153-4ed8-947f-3d38c6305a1c" />
+    </mapping>
   </component>
 </project>

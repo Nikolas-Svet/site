@@ -16,6 +16,10 @@ python manage startapp men (создание приложения в сайте)
     from men.views import home
     path('men/', home),
 
+
+
+    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
+
 База данных:
 
 createdb website (Создание базы данных)
@@ -145,6 +149,17 @@ def home(request):
 		truncatewords:50(любое число) выводит только 50 слов текста, если текст большой-->
 
 
+w1.update(cat_id = 1) update присваивает значение к той переменной, которую ука
+
+
+Superuser:
+Name: Nikita
+Mail: nikitaswetckin@mail.ru
+Password: Nikswet9069341129
+
+
+
+<!--	<p class="last">Дата: {{p.time_update|date: "d-m-Y H:i:s}}</p>-->
 
 
 
@@ -152,6 +167,8 @@ def home(request):
 
 
 
+
+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
 
 
 
